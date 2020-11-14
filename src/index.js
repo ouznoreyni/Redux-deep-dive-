@@ -19,7 +19,6 @@ console.log(store.getState());
 store.subscribe(() => console.log('state change'));
 console.log('====================================');
 */
-import reducer from './store/bugs.reduxToolkit';
 import store from './store/configureStore';
 import { bugAdded, bugRemoved, bugResolved } from './store/bugs.reduxToolkit';
 console.log('====================================');
