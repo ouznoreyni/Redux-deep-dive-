@@ -1,6 +1,4 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
-import { combineReducers } from 'redux';
-
 //actions creatore
 export const bugAdded = createAction('bugAdded');
 

@@ -18,7 +18,7 @@ store.dispatch(actions.bugAdded('bug 1'));
 console.log(store.getState());
 store.subscribe(() => console.log('state change'));
 console.log('====================================');
-*/
+
 import store from './store/configureStore';
 import { bugAdded, bugRemoved, bugResolved } from './store/bugs.reduxToolkit';
 console.log('====================================');
@@ -29,3 +29,11 @@ store.dispatch(bugRemoved({ id: 2 }));
 store.dispatch(bugResolved({ id: 1 }));
 console.log(store.getState());
 console.log('====================================');
+*/
+
+//slice
+import slice from './store/bug.slice';
+import store from './store/configureStore';
+import { bugAdd } from './store/bug.slice';
+store.dispatch(bugAdd({ description: 'bug add slice' }));
+console.log(store.getState());
