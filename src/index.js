@@ -34,6 +34,8 @@ console.log('====================================');
 //slice
 import slice from './store/bug.slice';
 import store from './store/configureStore';
-import { bugAdd } from './store/bug.slice';
+import { bugAdd, bugResolved } from './store/bug.slice';
 store.dispatch(bugAdd({ description: 'bug add slice' }));
+store.dispatch(bugResolved({ id: 1 }));
+
 console.log(store.getState());
