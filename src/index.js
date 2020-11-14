@@ -9,8 +9,8 @@ store.dispatch(bugResolved(2));
 console.log('store ', store.getState());
 console.log('Hello World!');
 */
-import * as actions from './actions';
-import store from './CustomeStore';
+import * as actions from './store/bugs';
+import store from './store/store';
 console.log('====================================');
 store.subscribe(() => console.log('state change'));
 store.dispatch(actions.bugAdded('bug 1'));

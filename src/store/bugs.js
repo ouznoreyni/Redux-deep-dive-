@@ -1,10 +1,30 @@
-import * as actions from './actionTypes';
+//actions types
+const BUG_ADDED = 'bugAdded';
+const BUG_REMOVED = 'bugRemoved';
+const BUG_RESOLVE = 'bugResolved';
 
+//actions creatore
+export const bugAdded = (description) => ({
+  type: BUG_ADDED,
+  payload: { description },
+});
+
+export const bugRemoved = (id) => ({
+  type: BUG_REMOVED,
+  payload: { id },
+});
+
+export const bugResolved = (id) => ({
+  type: BUG_RESOLVE,
+  payload: { id },
+});
+
+//reducer
 let lastId = 0;
 
 function reducer(state = [], action) {
   switch (action.type) {
-    case actions.BUG_ADDED:
+    case BUG_ADDED:
       return [
         ...state,
         {
@@ -13,11 +33,11 @@ function reducer(state = [], action) {
           resolve: false,
         },
       ];
-    case actions.BUG_RESOLVE:
+    case BUG_RESOLVE:
       return state.map((bug) =>
         bug.id !== action.payload.id ? bug : { ...bug, resolve: true },
       );
-    case actions.BUG_REMOVED:
+    case BUG_REMOVED:
       return state.filter((bug) => bug.id !== action.payload.id);
 
     default:
